@@ -6,18 +6,21 @@ import { useState, useEffect } from "react";
 function NasaPage() {
     const navigate = useNavigate()
     const [img,setImg] = useState("");
-    const handelFetch = () => {
+
+    useEffect(() => {
         fetch("https://api.nasa.gov/planetary/apod?api_key=5IIEafBwYkbHJWA4TNTU7Rzn0ccLE49eiK3ELzET")
         .then(result=> result.json())
-        .then(data => setImg(data.url))
-    }
-    handelFetch();
+        .then((data) => {setImg(data.url)
+            console.log(data)
+        })
+    },[])
+   
 
     return (
         <div>
             your photo of the day: 
 
-            <img src={img} alt="Avatar" class="avatar" />
+            <img src={img} alt="nasa" class="avatar" />
             <button onClick={()=> {navigate("/")}}>logout</button>
         </div>
     )

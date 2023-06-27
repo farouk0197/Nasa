@@ -1,11 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { GoogleLogin } from '@react-oauth/google';
 
 
 function LandingPage() {
     const navigate = useNavigate()
-
+    const responseMessage = (response) => {
+        console.log(response);
+        navigate('/nasa')
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };
     return (
         <div>
 
@@ -14,7 +20,7 @@ function LandingPage() {
           
             <button onClick={()=> {navigate('register')}} type="submit">Signup</button>
             <button onClick={()=> {navigate('login')}} type="submit">Login</button>
-            <button type="submit">Login with Google</button>
+            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
             
 
 
