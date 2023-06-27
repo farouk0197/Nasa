@@ -18,8 +18,8 @@ function NasaPage() {
 
     return (
         <div>
-            your photo of the day: 
-
+            <h3>your photo of the day: </h3>
+            <br/>
             <img src={img} alt="nasa" class="avatar" />
             <button onClick={()=> {navigate("/")}}>logout</button>
         </div>
