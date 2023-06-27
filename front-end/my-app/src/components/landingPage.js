@@ -20,7 +20,8 @@ function LandingPage() {
           
             <button onClick={()=> {navigate('register')}} type="submit">Signup</button>
             <button onClick={()=> {navigate('login')}} type="submit">Login</button>
-            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            <br/>
+            <GoogleLogin onSuccess={responseMessage} onError={errorMessage}/>
             
 
 
