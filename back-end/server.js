@@ -60,3 +60,8 @@ mongoose.connect("mongodb+srv://admin:dAq7mHPoUJsZ82GM@nasa.uy1vnps.mongodb.net/
     .catch((error) => {
         console.log(error)
     })
+
+
+    module.exports = {
+        app
+    }
