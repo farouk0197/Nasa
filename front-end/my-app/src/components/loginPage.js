@@ -34,7 +34,7 @@ function LoginPage() {
             headers: { 'Content-Type': 'application/json' },
             body: raw
         };
-        fetch(`http://localhost:3001/login`, requestOptions)
+        fetch(`https://clumsy-onesies-bat.cyclic.app/login`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 console.log("You've succesfully made an account");
